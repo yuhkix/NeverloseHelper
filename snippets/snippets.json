@@ -266,5 +266,43 @@
         "body": "AntiAim.GetCurrentRealRotation($1)",
         "description": "Override Pitch\n\nParameters: NO",
         "prefix": ["!aGetCurrentRealRotation", "AntiAim.GetCurrentRealRotation"]
+    },
+    "Watermark":
+    {
+        "body": [
+            "local username = Cheat.GetCheatUserName()", 
+            "local text = \"neverlose.cc | \" .. username",
+            "local textSize = Render.CalcTextSize(text, 12)",
+            "local position = Vector2.new(20, 15)",
+            "local indent = Vector2.new(10, 5)",
+            "Cheat.RegisterCallback(\"draw\", function()",
+            "    Render.BoxFilled(Vector2.new(position.x - indent.x, position.y - indent.y), Vector2.new(position.x + textSize.x + indent.x, position.y + textSize.y + indent.y), Color.new(0, 0, 0, 0.7))",
+            "    Render.Text(text, Vector2.new(position.x, position.y), Color.new(1, 1, 1, 1), 12)",
+            "end)"
+        ],
+        "description": "draws a simple watermark.",
+        "prefix": "!watermark"
+    },
+    "Killsay":
+    {
+        "body": [
+            "local phrases = {\"1 sit nn dog\", \"owned\"}",
+            "local function get_phrase()",
+            "    return phrases[Utils.RandomInt(1, #phrases)]:gsub('\"', '')",
+            "end",
+            "Cheat.RegisterCallback(\"events\", function(event)",
+            "    if event:GetName() ~= \"player_death\" then return end",
+            "",
+            "    local me = EntityList.GetLocalPlayer()",
+            "    local victim = EntityList.GetPlayerForUserID(event:GetInt(\"userid\"))",
+            "    local attacker = EntityList.GetPlayerForUserID(event:GetInt(\"attacker\"))",
+            "",
+            "    if victim == attacker or attacker ~= me then return end",
+            "",
+            "    EngineClient.ExecuteClientCmd('say \"' .. get_phrase() .. '\"')",
+            "end)"
+        ],
+        "description": "generates a simple killsay.",
+        "prefix": "!killsay"
     }
 }
