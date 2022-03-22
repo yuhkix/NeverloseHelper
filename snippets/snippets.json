@@ -1,0 +1,270 @@
+{
+    "menu":
+    {
+        "prefix": "!menu",
+        "body": [
+            "local name = \"Enter LUA Name\" -- Your LUA Name",
+            "local checkbox = Menu.Switch(\"neverlose.cc\", \"Toggle me!\", false)",
+            "",
+            "local ui_callback = function()",
+            "    local newState = checkbox:Get();",
+            "    -- Do your UI Workflow here",
+            "end",
+            "",
+            "ui_callback()",
+            "",
+            "checkbox:RegisterCallback(ui_callback)"
+        ],
+        "description": "Simple starter menu"
+    },
+    "Line":
+    {
+        "prefix": ["!rLine", "Render.Line"],
+        "body":[
+            "Render.Line(Vector2.new(0.0, 0.0), Vector2.new(5.0, 6.0), Color.new(1.0, 1.0, 1.0, 1.0))"
+        ],
+        "description": "Helps you draw a Line"
+    },
+    "PolyLine":
+    {
+        "prefix": ["!rPolyLine", "Render.PolyLine"],
+        "body":[
+            "Render.PolyLine(Color.new(1.0, 1.0, 1.0, 1.0), Vector2.new(100, 100), Vector2.new(100, 500), Vector2.new(500, 100))"
+        ],
+        "description": "Helps you draw a PolyLine"
+    },
+    "PolyFilled":
+    {
+        "prefix": ["!rPolyFilled", "Render.PolyFilled"],
+        "body":[
+            "Render.PolyFilled(Color.new(1.0, 1.0, 1.0, 1.0), Vector2.new(100, 100), Vector2.new(100, 500), Vector2.new(500, 100))"
+        ],
+        "description": "Helps you draw a PolyFilled"
+    },
+    "Box":
+    {
+        "prefix": ["!rBox", "Render.Box"],
+        "body":[
+            "Render.Box(Vector2.new(0.0, 0.0), Vector2.new(4.0, 5.0), Color.new(1.0, 1.0, 1.0, 1.0))"
+        ],
+        "description": "Helps you draw a Box"
+    },
+    "BoxFilled":
+    {
+        "prefix": ["!rBoxFilled", "Render.BoxFilled"],
+        "body":[
+            "Render.BoxFilled(Vector2.new(0.0, 0.0), Vector2.new(4.0, 5.0), Color.new(1.0, 1.0, 1.0, 1.0))"
+        ],
+        "description": "Helps you draw a BoxFilled"
+    },
+    "GradientBoxFilled":
+    {
+        "prefix": "!rGradientBoxFilled",
+        "body":[
+            "Render.GradientBoxFilled(Vector2.new(100, 100), Vector2.new(300, 300), Color.new(0, 0, 0, 1), Color.new(0, 0, 0, 1), Color.new(1, 1, 1, 1), Color.new(1, 1, 1, 1))"
+        ],
+        "description": "Helps you draw a Gradient Box Filled"
+    },
+    "Circle":
+    {
+        "prefix": ["!rCircle", "Render.Circle"],
+        "body":[
+            "Render.Circle(Vector2.new(0.0, 0.0), 2.0, 30, Color.new(1.0, 1.0, 1.0, 1.0))"
+        ],
+        "description": "Helps you draw a Circle"
+    },
+    "Circle3D":
+    {
+        "prefix": ["!rCircle3D", "Render.Circle3D"],
+        "body":[
+            "Render.Circle3D(Vector.new(0, 0, 0), 58, 10.0, Color.new(1.0, 1.0, 1.0))"
+        ],
+        "description": "Helps you draw a 3D Circle"
+    },
+    "Circle3DFilled":
+    {
+        "prefix": ["!rCircle3DFilled", "Render.Circle3DFilled"],
+        "body":[
+            "Render.Circle3DFilled(Vector.new(0, 0, 0), 58, 10.0, Color.new(1.0, 1.0, 1.0))"
+        ],
+        "description": "Helps you draw a 3D Circle Filled"
+    },
+    "WeaponIcon":
+    {
+        "prefix": ["!rWeaponIcon", "Render.WeaponIcon"],
+        "body":[
+            "Render.WeaponIcon(7, Vector2.new(100, 100), Color.new(1.0, 1.0, 1.0), 16)"
+        ],
+        "description": "Helps you draw a Weapon Icon"
+    },
+    "CalcWeaponIconSize":
+    {
+        "prefix": ["!rCalcWeaponIconSize", "Render.CalcWeaponIconSize"],
+        "body":[
+            "local icon_size = Render.CalcWeaponIconSize(7, 16)"
+        ],
+        "description": "Helps you calculate Weapon Icon Size"
+    },
+    "CalcTextSize":
+    {
+        "prefix": ["!rCalcTextSize", "Render.CalcTextSize"],
+        "body":[
+            "local text_size = Render.CalcTextSize(\"Hello world, it's me\", 16, font_here_but_not_required)"
+        ],
+        "description": "Helps you calculate Text Size"
+    },
+    "CircleFilled":
+    {
+        "prefix": ["!rText", "Render.CircleFilled"],
+        "body":[
+            "Render.Text(\"Anarchist is cute\", Vector2.new(0.0, 0.0), Color.new(1.0, 1.0, 1.0, 1.0), 20)"
+        ],
+        "description": "Helps you draw a text"
+    },
+    "InitFont":
+    {
+        "prefix": ["!rInitFont", "Render.InitFont"],
+        "body": "verdana = Render.InitFont(\"Verdana\", 11, {'b', 'i', 'r'})",
+        "description": "Helps you initalize any font of your choice"
+    },
+    "WorldToScreen":
+    {
+        "prefix": ["!rWorldToScreen", "Render.WorldToScreen"],
+        "body": "local screen_pos = Render.WorldToScreen(Vector.new(0, 0, 0))",
+        "description": "Helps you get WorldToScreen"
+    },
+    "LoadImage":
+    {
+        "prefix": ["!rLoadImage", "Render.LoadImage"],
+        "body": "local image_loaded = Render.LoadImage(bytes, image_size)",
+        "description": "Helps you Load Images"
+    },
+    "LoadImageFromFile":
+    {
+        "prefix": ["!rLoadImageFromFile", "Render.LoadImageFromFile"],
+        "body": "local image = Render.LoadImageFromFile('$1', size)",
+        "description": "Helps you get Load images from a file"
+    },
+    "Image": 
+    {
+        "prefix": ["!rImage", "Render.Image"],
+        "body": "Render.Image(image_loaded, Vector2.new(100, 100), image_size)",
+        "description": "Renders the image that you have loaded with the size that you have written"
+    },
+    "Blur": 
+    {
+        "prefix": ["!rBlur", "Render.Blur"],
+        "body": "Render.Blur(Vector2.new(0.0, 0.0), Vector2.new(4.0, 5.0))",
+        "description": "Renders blur of the written min & max"
+    },
+    "GetMenuPos": 
+    {
+        "prefix": ["!rGetMenuPos", "Render.GetMenuPos"],
+        "body": "local menu_pos = Render.GetMenuPos() -- returns vector 2",
+        "description": "Gets menu current position"
+    },
+    "GetMenuSize": 
+    {
+        "prefix": ["!rGetMenuSize", "Render.GetMenuSize"],
+        "body": "local menu_pos = Render.GetMenuSize() -- returns vector 2",
+        "description": "Gets menu current size"
+    },
+    "Http.Get":
+    {
+        "body": "local http_content = Http.Get('$1')",
+        "description": "Does GET Request to the string argument you passed in\n\nMake sure it's an URL and has\n- https://...\n- http://...",
+        "prefix": ["!hGet", "Http.Get"]
+    },
+    "Http.Post":
+    {
+        "body": "local http_content = Http.Post('$1', '$2')",
+        "description": "Does POST Request to the string argument you passed in\n\nMake sure it's an URL and has\n- https://...\n- http://...",
+        "prefix": ["!hPost", "Http.Post"]
+    },
+    "Http.GetAsync":
+    {
+        "body": [
+            "Http.GetAsync('$1', function(url_content)",
+            "  print(url_content)",
+            "end)"
+        ],
+        "description": "Does Get Asynchronous Request to the string argument you passed in\n\nMake sure it's an URL and has\n- https://...\n- http://...",
+        "prefix": ["!hGetAsync", "Http.GetAsync"]
+    },
+    "Http.PostAsync":
+    {
+        "body": [
+            "Http.PostAsync('$1', '$2', function(url_content)",
+            "  print(url_content)",
+            "end)"
+        ],
+        "description": "Does POST Asynchronous to the string argument you passed in\n\nMake sure it's an URL and has\n- https://...\n- http://...",
+        "prefix": ["!hPostAsync", "Http.PostAsync"]
+    },
+    "OverrideInverter":
+    {
+        "body": "AntiAim.OverrideInverter($1)",
+        "description": "Override Inverter\n\nParameters:\n1: TYPE: bool, \n   DESCRIPTION: A new desync limit value (0 - 58)",
+        "prefix": ["!aOverrideInverter", "AntiAim.OverrideInverter"]
+    },
+    "OverrideLimit": 
+    {
+        "body": "AntiAim.OverrideLimit($1)",
+        "description": "Override Limit\n\nParameters:\n1: TYPE: float, \n   DESCRIPTION: A new value for inverter",
+        "prefix": ["!aOverrideLimit", "AntiAim.OverrideLimit"]
+    },
+    "OverrideYawOffset":
+    {
+        "body": "AntiAim.OverrideYawOffset($1)",
+        "description": "Override Yaw Offset\n\nParameters:\n1: TYPE: float, \n   DESCRIPTION: A new yaw offset value (-180 - 180)",
+        "prefix": ["!aOverrideYawOffset", "AntiAim.OverrideYawOffset"]
+    },
+    "OverrideLBYOffset":
+    {
+        "body": "AntiAim.OverrideLBYOffset($1)",
+        "description": "Override LBY Offset\n\nParameters:\n1: TYPE: float, \n   DESCRIPTION: A new lby offset value (-58 - 58)",
+        "prefix": ["!aOverrideLBYOffset", "AntiAim.OverrideLBYOffset"]
+    },
+    "OverridePitch":
+    {
+        "body": "AntiAim.OverridePitch($1) -- UP",
+        "description": "Override Pitch\n\nParameters:\n1: TYPE: float, \n   DESCRIPTION: A new pitch value",
+        "prefix": ["!aOverridePitch", "AntiAim.OverridePitch"]
+    },
+    "GetInverterState":
+    {
+        "body": "AntiAim.GetInverterState()",
+        "description": "Get Inverter State\n\nParameters: NO",
+        "prefix": ["!aGetInverterState", "AntiAim.GetInverterState"]
+    },
+    "GetMinDesyncDelta":
+    {
+        "body": "AntiAim.GetMinDesyncDelta()",
+        "description": "Get Min Desync Delta\n\nParameters: NO",
+        "prefix": ["!aGetMinDesyncDelta", "AntiAim.GetMinDesyncDelta"]
+    },
+    "GetMaxDesyncDelta":
+    {
+        "body": "AntiAim.GetMaxDesyncDelta()",
+        "description": "Get Max Desync Delta\n\nParameters: NO",
+        "prefix": ["!aGetMaxDesyncDelta", "AntiAim.GetMaxDesyncDelta"]
+    },
+    "GetFakeRotation":
+    {
+        "body": "AntiAim.GetFakeRotation()",
+        "description": "Get Fake Rotation\n\nParameters: NO",
+        "prefix": ["!aGetFakeRotation", "AntiAim.GetFakeRotation"]
+    },
+    "OverrideDesyncOnShot":
+    {
+        "body": "AntiAim.OverrideDesyncOnShot($1)",
+        "description": "Override Desync On Shot\n\nParameters:\n1: TYPE: int, \n   DESCRIPTION: 0 - disable override, \n1 - left, \n2 - right, \n3 - overlap on shot with fake, \n4 - opposite to fake",
+        "prefix": ["!aOverrideDesyncOnShot", "AntiAim.OverrideDesyncOnShot"]
+    },
+    "GetCurrentRealRotation":
+    {
+        "body": "AntiAim.GetCurrentRealRotation($1)",
+        "description": "Override Pitch\n\nParameters: NO",
+        "prefix": ["!aGetCurrentRealRotation", "AntiAim.GetCurrentRealRotation"]
+    }
+}
